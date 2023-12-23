@@ -17,13 +17,18 @@ jobs:
           python-version: '3.x'
           # inventory: inventory.ini,
           # playbook: nginxinstall.yml
+      - name: Set up Ansible
+        uses: garygrossgarten/github-action-ansible@v1
+        with:
+          playbook: nginxinstall.yml
+          inventory: inventory.ini
  
-      - name: Update apt Package and Install Ansible
-        run: |
-          sudo apt update
-          sudo apt install ansible
-          # python -m pip install --upgrade pip
-          # pip install ansible
+      # - name: Update apt Package and Install Ansible
+      #   run: |
+      #     sudo apt update
+      #     sudo apt install ansible
+      #     # python -m pip install --upgrade pip
+      #     # pip install ansible
 
       - name: check directory
         run: |
