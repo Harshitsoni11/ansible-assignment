@@ -15,8 +15,8 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: '3.x'
-          inventory: inventory.ini,
-          playbook: nginxinstall.yml
+          # inventory: inventory.ini,
+          # playbook: nginxinstall.yml
  
       - name: Update apt Package and Install Ansible
         run: |
@@ -24,6 +24,10 @@ jobs:
           sudo apt install ansible
           # python -m pip install --upgrade pip
           # pip install ansible
+
+      - name: check directory
+        run: |
+          ls
 
       
          
