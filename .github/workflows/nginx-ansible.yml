@@ -23,10 +23,11 @@ jobs:
         with:
           ssh-private-key: ${{secrets.SSH_PRIVATE_KEY}}
       - name: Set up Ansible
-        uses: ansible/ansible-galaxy-action@v1
-        with:
-          playbook: nginxinstall.yml
-          inventory: inventory.ini
+        run: |
+         sudo apt update
+         sudo apt install pipx
+         pipx ensurepath
+         pipx install --include-deps ansible
  
       # - name: Update apt Package and Install Ansible
       #   run: |
