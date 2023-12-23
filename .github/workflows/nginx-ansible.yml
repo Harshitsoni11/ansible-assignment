@@ -23,7 +23,7 @@ jobs:
         with:
           ssh-private-key: ${{secrets.SSH_PRIVATE_KEY}}
       - name: Set up Ansible
-        uses: garygrossgarten/github-action-ansible@v1
+        uses: ansible/ansible-galaxy-action@v1
         with:
           playbook: nginxinstall.yml
           inventory: inventory.ini
