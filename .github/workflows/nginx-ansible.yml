@@ -28,6 +28,8 @@ jobs:
       - name: check directory
         run: |
           ls
+          ansible all -i inventory.ini -m ping
+          
 
       
          
