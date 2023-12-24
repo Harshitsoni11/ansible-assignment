@@ -39,6 +39,7 @@ jobs:
       - name: check directory
         run: |
           ls
+          chmod 400 ${secrets.SSH_PRIVATE_KEY}
           ansible all -i inventory.ini -m ping
           
 
