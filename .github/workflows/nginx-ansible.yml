@@ -36,7 +36,8 @@ jobs:
           pwd
           echo "${{secrets.SSH_PRIVATE_KEY}}" > mainfile.pem
           chmod 400 mainfile.pem
-          ansible all -i inventory.ini -m ping
+          ansible all -i inventory.ini -m ping -vvv
+
 
 
 
