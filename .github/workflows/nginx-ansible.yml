@@ -37,7 +37,7 @@ jobs:
           ls
           pwd
           echo "${{secrets.SSH_PRIVATE_KEY}}" > mainfile.pem
-          chmod 400 mainfile.pem
+          chmod 600 mainfile.pem
           ansible all -i inventory.ini -m ping --private-key=<(echo "${{ secrets.SSH_PRIVATE_KEY }}") --user=ubuntu
         env:
           SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
