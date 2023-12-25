@@ -23,9 +23,6 @@ jobs:
           sudo apt update
           sudo apt install -y python3-pip
           sudo pip3 install ansible
-
-      # - name: Clear Known Hosts File
-      #   run: rm -f ~/.ssh/known_hosts
         
       - name: Set up SSH Key
         run: |
