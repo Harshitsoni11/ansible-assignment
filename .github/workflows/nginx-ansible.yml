@@ -3,7 +3,7 @@ name: Install nginx on EC2
 on:
   workflow_dispatch:
 jobs:
-  deploy-nginx:
+  Install-nginx:
     runs-on: ubuntu-latest
 
     steps:
@@ -36,6 +36,6 @@ jobs:
 
       - name: Run Ansible Playbook
         run: |
-          ansible-playbook -i inventory.ini --private-key=/home/runner/.ssh/id_rsa -u ubuntu -b nginxinstall.yml
+          ansible-playbook -i inventory.ini --private-key=/home/runner/.ssh/id_rsa nginxinstall.yml
 
 
