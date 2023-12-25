@@ -33,18 +33,9 @@ jobs:
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > /home/runner/.ssh/id_rsa
           chmod 400 /home/runner/.ssh/id_rsa
         shell: bash
-
-      - name: Display SSH Key
-        run: cat ~/.ssh/id_rsa
-
-
-      # - name: Add EC2 Host Key
-      #   run: ssh-keyscan -H -t rsa 13.127.204.111 >> ~/.ssh/known_hosts
-  
-      - name: Display SSH Key and Known Hosts
-        run: |
-          cat ~/.ssh/id_rsa
-          # cat ~/.ssh/known_hosts
+        
+      - name: Add EC2 Host Key
+        run: ssh-keyscan -H -t rsa 13.127.204.111 >> ~/.ssh/known_hosts
 
       - name: Run Ansible Playbook
         run: |
