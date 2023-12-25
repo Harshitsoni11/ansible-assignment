@@ -38,13 +38,13 @@ jobs:
         run: cat ~/.ssh/id_rsa
 
 
-      - name: Add EC2 Host Key
-        run: ssh-keyscan -H -t rsa 13.127.204.111 >> ~/.ssh/known_hosts
+      # - name: Add EC2 Host Key
+      #   run: ssh-keyscan -H -t rsa 13.127.204.111 >> ~/.ssh/known_hosts
   
       - name: Display SSH Key and Known Hosts
         run: |
           cat ~/.ssh/id_rsa
-          cat ~/.ssh/known_hosts
+          # cat ~/.ssh/known_hosts
 
       - name: Run Ansible Playbook
         run: |
