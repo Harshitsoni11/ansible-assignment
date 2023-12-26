@@ -34,6 +34,7 @@ jobs:
 
       - name: Run Ansible Playbook
         run: |
+          ansible all -i inventory.ini -m ping --private-key=/home/runner/.ssh/id_rsa --extra-vars "ansible_ssh_common_args='-o StrictHostKeyChecking=no'"
           ansible-playbook -i inventory.ini --private-key=/home/runner/.ssh/id_rsa --extra-vars "ansible_ssh_common_args='-o StrictHostKeyChecking=no'" nginxinstall.yml
 
 
